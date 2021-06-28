@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:vroom/src/routes/routes.dart';
 
 void main() {
   runApp(MyApp());
@@ -10,6 +11,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
+      routes: routes,
+      initialRoute: 'welcome',
       title: 'Material App',
       theme: ThemeData(
         accentColor: Color.fromRGBO(255, 140, 0, 1.0),
@@ -22,16 +25,6 @@ class MyApp extends StatelessWidget {
             color: Colors.black,
           )
         )
-      ),
-      home: Scaffold(
-        appBar: AppBar(
-          title: Text('Material App Bar'),
-        ),
-        body: Center(
-          child: Container(
-            child: Text('Hello World'),
-          ),
-        ),
       ),
     );
   }
