@@ -14,7 +14,7 @@ class WelcomePage extends StatelessWidget {
               image: DecorationImage(
                 fit: BoxFit.cover,
                 image: NetworkImage(
-                  'https://images.unsplash.com/photo-1482049016688-2d3e1b311543?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=653&q=80'
+                  'https://images.unsplash.com/photo-1615719413546-198b25453f85?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTZ8fGZvb2QlMjBkZWxpdmVyeXxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60'
                 )
               ),
             ),
@@ -51,7 +51,7 @@ class WelcomePage extends StatelessWidget {
                 height: 45.0,
                 child: RaisedButton(
                   onPressed: () {
-                    print("Hello");
+                    Navigator.pushNamed(context, 'login');
                   },
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(20.0)
