@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 
 //Pages
-import 'package:vroom/src/pages/forgot_password.dart';
-import 'package:vroom/src/pages/login_page.dart';
-import 'package:vroom/src/pages/sign_up_page.dart';
-import 'package:vroom/src/pages/welcome_screen.dart';
-import 'package:vroom/src/tabs/tabs_page.dart';
+import 'package:vroom/src/features/presentation/forgot_password/View/forgot_password.dart';
+import 'package:vroom/src/features/presentation/login_page/VIew/login_page.dart';
+import 'package:vroom/src/features/presentation/sign_up_page/VIew/sign_up_page.dart';
+import 'package:vroom/src/features/presentation/tabs/tabs_page.dart';
+import 'package:vroom/src/features/presentation/welcome_page/VIew/welcome_screen.dart';
+
 
 final routes = <String, WidgetBuilder>{
   'welcome' : (BuildContext context) => WelcomePage(),

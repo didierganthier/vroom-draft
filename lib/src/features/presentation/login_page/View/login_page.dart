@@ -2,7 +2,7 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:vroom/src/colors/colors.dart';
-import 'package:vroom/src/widgets/back_button.dart';
+import 'package:vroom/src/features/presentation/widgets/back_button.dart';
 
 class LoginPage extends StatelessWidget {
   @override
