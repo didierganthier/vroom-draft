@@ -173,7 +173,7 @@ Widget _buttonLogin(BuildContext context){
     height: 45.0,
     child: RaisedButton(
       onPressed: () {
-        Navigator.pushNamed(context, 'login');
+        Navigator.pushNamed(context, 'tabs');
       },
       shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(20.0)

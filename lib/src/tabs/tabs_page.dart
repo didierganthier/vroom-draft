@@ -8,8 +8,10 @@ class TabsPage extends StatefulWidget {
 class _TabsPageState extends State<TabsPage> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Text('Hello'),
+    return SafeArea(
+      child: Scaffold(
+        body: Text('Hello'),
+      ),
     );
   }
 }
