@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:vroom/src/colors/colors.dart';
@@ -30,7 +31,7 @@ class LoginPage extends StatelessWidget {
                   width: double.infinity,
                   height: 350,
                   fit: BoxFit.cover,
-                  image: NetworkImage(
+                  image: CachedNetworkImageProvider(
                       'https://images.unsplash.com/photo-1482049016688-2d3e1b311543?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=653&q=80'
                   ),
                 ),
