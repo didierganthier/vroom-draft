@@ -1,9 +1,11 @@
 import 'package:fancy_bottom_navigation/fancy_bottom_navigation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:vroom/src/features/presentation/tabs/explore_tab/View/explore_tab.dart';
 import 'package:vroom/src/features/presentation/tabs/favorites_tab/View/favorites_tab.dart';
 import 'package:vroom/src/features/presentation/tabs/my_order_tab/View/my_order_tab.dart';
 import 'package:vroom/src/features/presentation/tabs/profile_tab/View/profile_tab.dart';
+import 'package:vroom/src/features/presentation/widgets/alert_dialog.dart';
 
 
 class TabsPage extends StatefulWidget {
@@ -12,6 +14,14 @@ class TabsPage extends StatefulWidget {
 }
 
 class _TabsPageState extends State<TabsPage> {
+
+  @override
+  initState(){
+    super.initState();
+    SchedulerBinding.instance.addPostFrameCallback((timeStamp) {
+      showAlert(context, "assets/location.png", "Enable Your Location", "Please allow to use your location to show nearby restaurants on the map.", "Enable Location", ()=> Navigator.pop(context));
+    });
+  }
 
   List<Widget> _widgetOptions = [
     ExploreTab(),
