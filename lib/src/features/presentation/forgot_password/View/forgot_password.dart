@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:vroom/src/features/presentation/widgets/alert_dialog.dart';
 import 'package:vroom/src/features/presentation/widgets/back_button.dart';
 
 
@@ -75,7 +76,7 @@ Widget _buttonLogin(BuildContext context) {
     height: 45.0,
     child: RaisedButton(
       onPressed: () {
-        showAlert(context);
+        showAlert(context, "assets/reset_pass.png", "Your password has been reset", "You'll shortly receive an email with a code to setup a new password", "Done", ()=> Navigator.pushNamed(context, 'login'));
       },
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20.0)),
       color: Theme.of(context).accentColor,
@@ -90,69 +91,3 @@ Widget _buttonLogin(BuildContext context) {
   );
 }
 
-void showAlert(BuildContext context) {
-  showDialog(
-    context: context,
-    builder: (context) {
-      return AlertDialog(
-        backgroundColor: Colors.yellow[50],
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(20.0)
-        ),
-        content: Container(
-          height: 400,
-          child: Column(
-            children: [
-              Image(
-                image: AssetImage('assets/reset_pass.png'),
-                width: 130,
-                height: 130,
-              ),
-              Container(
-                margin: EdgeInsets.all(15.0),
-                child: Text('Your password has been reset',
-                  style: TextStyle(
-                    color: Theme.of(context).primaryColor,
-                    fontWeight: FontWeight.bold,
-                    fontSize: 20.0,
-                  ),
-                ),
-              ),
-              Container(
-                margin: EdgeInsets.all(15.0),
-                child: Text("You'll receive an email with a code to setup a new password",
-                  style: TextStyle(
-                    color: Theme.of(context).primaryColor,
-                    fontWeight: FontWeight.w400,
-                    fontSize: 15.0,
-                  ),
-                ),
-              ),
-              _doneButton(context),
-            ],
-          ),
-        ),
-      );
-    },
-  );
-}
-
-Widget _doneButton(BuildContext context){
-  return Container(
-    margin: EdgeInsets.only(top: 40.0),
-    width: MediaQuery.of(context).size.width - 35,
-    height: 45.0,
-    child: RaisedButton(
-      onPressed: () {},
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20.0)),
-      color: Theme.of(context).accentColor,
-      child: Text(
-        'Done',
-        style: TextStyle(
-          color: Colors.white,
-          fontSize: 17.0,
-        ),
-      ),
-    ),
-  );
-}
