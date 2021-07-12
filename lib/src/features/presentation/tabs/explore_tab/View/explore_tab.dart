@@ -52,33 +52,36 @@ class ExploreTab extends StatelessWidget {
 Widget _topBar(BuildContext context) {
   return Row(
     children: [
-      Container(
-        width: MediaQuery.of(context).size.width / 1.4,
-        padding: EdgeInsets.all(10.0),
-        margin: EdgeInsets.only(left: 16),
-        decoration: BoxDecoration(
-            border: Border.all(
-              color: Color.fromRGBO(246, 236, 239, 1.0),
-            ),
-            borderRadius: BorderRadius.circular(20.0)),
-        child: Row(
-          children: [
-            Icon(
-              Icons.search,
-              size: 20.0,
-              color: gris,
-            ),
-            Container(
-              margin: EdgeInsets.only(left: 5),
-              child: Text(
-                'Search',
-                style: TextStyle(
-                  color: gris,
-                  fontSize: 17.0,
-                ),
+      GestureDetector(
+        onTap: () => Navigator.pushNamed(context, 'search'),
+        child: Container(
+          width: MediaQuery.of(context).size.width / 1.4,
+          padding: EdgeInsets.all(10.0),
+          margin: EdgeInsets.only(left: 16),
+          decoration: BoxDecoration(
+              border: Border.all(
+                color: Color.fromRGBO(246, 236, 239, 1.0),
               ),
-            )
-          ],
+              borderRadius: BorderRadius.circular(20.0)),
+          child: Row(
+            children: [
+              Icon(
+                Icons.search,
+                size: 20.0,
+                color: gris,
+              ),
+              Container(
+                margin: EdgeInsets.only(left: 5),
+                child: Text(
+                  'Search',
+                  style: TextStyle(
+                    color: gris,
+                    fontSize: 17.0,
+                  ),
+                ),
+              )
+            ],
+          ),
         ),
       ),
       Spacer(),
