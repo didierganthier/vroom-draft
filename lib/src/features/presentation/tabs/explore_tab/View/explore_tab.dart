@@ -2,6 +2,7 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_swiper/flutter_swiper.dart';
 import 'package:vroom/src/colors/colors.dart';
+import 'package:vroom/src/features/presentation/widgets/populares_card.dart';
 
 class ExploreTab extends StatelessWidget {
   @override
@@ -34,7 +35,7 @@ class ExploreTab extends StatelessWidget {
                       ),
                       _sliderCards(),
                       _headers(context, 'Popular this week', 'Show all'),
-                      _populares(context, 'https://images.unsplash.com/photo-1458642849426-cfb724f15ef7?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NTR8fGZvb2R8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60'),
+                      popularesCard(context, 'https://images.unsplash.com/photo-1458642849426-cfb724f15ef7?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NTR8fGZvb2R8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60'),
                       _headers(context, 'Collections', "Show all"),
                       _slidersCollections(),
                     ],
@@ -98,7 +99,9 @@ Widget _topBar(BuildContext context) {
             size: 25,
             color: Colors.white,
           ),
-          onPressed: () {},
+          onPressed: () {
+            Navigator.pushNamed(context, 'filter');
+          },
         ),
       ),
     ],
@@ -246,106 +249,7 @@ Widget _headers(BuildContext context, String textHeader, String textAction) {
   );
 }
 
-Widget _populares(BuildContext context, String imageUrl) {
-  return ListView.builder(
-    itemCount: 4,
-    itemExtent: 100,
-    scrollDirection: Axis.vertical,
-    physics: NeverScrollableScrollPhysics(),
-    shrinkWrap: true,
-    itemBuilder: (context, index) {
-      return Container(
-        height: 300,
-        padding: EdgeInsets.symmetric(vertical: 10),
-        child: Row(
-          children: [
-            ClipRRect(
-              borderRadius: BorderRadius.circular(10.0),
-              child: CachedNetworkImage(
-                height: 80,
-                width: 80,
-                fit: BoxFit.cover,
-                imageUrl: imageUrl,
-              ),
-            ),
-            Container(
-              padding: EdgeInsets.only(left: 10),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Container(
-                    margin: EdgeInsets.symmetric(vertical: 7.0),
-                    child: Text(
-                      "Pizza Garden",
-                      style: TextStyle(
-                          color: Colors.black,
-                          fontWeight: FontWeight.bold,
-                          fontSize: 17.0),
-                    ),
-                  ),
-                  Container(
-                    alignment: Alignment.centerLeft,
-                    margin: EdgeInsets.only(bottom: 5.0),
-                    child: Text(
-                      '36 Chavannes, Petion-Ville',
-                      style: TextStyle(
-                        color: gris,
-                        fontWeight: FontWeight.w500,
-                        fontSize: 13.0,
-                      ),
-                    ),
-                  ),
-                  Row(
-                    children: [
-                      Icon(
-                        Icons.star,
-                        color: amarillo,
-                        size: 16,
-                      ),
-                      Text(
-                        "4.8",
-                        style: TextStyle(
-                          color: Colors.black,
-                          fontWeight: FontWeight.w500,
-                          fontSize: 13.0,
-                        ),
-                      ),
-                      Text(
-                        ' (233 ratings)',
-                        style: TextStyle(
-                          color: gris,
-                          fontWeight: FontWeight.w500,
-                          fontSize: 13.0,
-                        ),
-                      ),
-                      Container(
-                        margin: EdgeInsets.symmetric(horizontal: 5.0),
-                        width: 80.0,
-                        height: 18.0,
-                        child: RaisedButton(
-                          elevation: 0.5,
-                          shape: StadiumBorder(),
-                          color: Theme.of(context).accentColor,
-                          textColor: Colors.white,
-                          onPressed: () {},
-                          child: Text(
-                            'Delivery',
-                            style: TextStyle(fontSize: 11.0),
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                ],
-              ),
-            ),
-          ],
-        ),
-      );
-    },
-  );
-}
+
 
 Widget _slidersCollections(){
   return Container(

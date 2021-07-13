@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 
 import 'header_text.dart';
 
-Widget headerDoubleText({ String textHeader, String textAction}) {
+Widget headerDoubleText({ String textHeader, String textAction,}) {
   return Container(
     child: Row(
       children: [
-        headerText(texto: textHeader, fontsize: 20.0),
+        headerText(texto: textHeader, fontsize: 25.0),
         Spacer(),
         GestureDetector(
             onTap: () {},

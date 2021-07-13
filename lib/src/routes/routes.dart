@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:vroom/src/features/presentation/filter_page/View/filter_page.dart';
 
 //Pages
 import 'package:vroom/src/features/presentation/forgot_password/View/forgot_password.dart';
@@ -15,5 +16,6 @@ final routes = <String, WidgetBuilder>{
   'forgot-password' : (BuildContext context) => ForgotPassword(),
   'sign-up' : (BuildContext context) => SignUpPage(),
   'tabs' : (BuildContext context) => TabsPage(),
-  'search' : (BuildContext context) => SearchPage()
+  'search' : (BuildContext context) => SearchPage(),
+  'filter' : (BuildContext context) => FilterPage(),
 };
