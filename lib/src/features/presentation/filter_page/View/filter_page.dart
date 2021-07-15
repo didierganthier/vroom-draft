@@ -3,7 +3,7 @@ import 'package:vroom/src/colors/colors.dart';
 import 'package:vroom/src/features/presentation/filter_page/View/customsWidgets/cuisines_filter.dart';
 import 'package:vroom/src/features/presentation/filter_page/View/customsWidgets/list_tile_checked.dart';
 import 'package:vroom/src/features/presentation/filter_page/View/customsWidgets/price_filter.dart';
-import 'package:vroom/src/features/presentation/widgets/header_text.dart';
+import 'package:vroom/src/features/presentation/widgets/Headers/header_text.dart';
 
 class FilterPage extends StatefulWidget {
   FilterPage({Key key}) : super(key: key);

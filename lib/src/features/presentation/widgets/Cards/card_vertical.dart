@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:vroom/src/colors/colors.dart';
 
-import 'header_text.dart';
+import '../Headers/header_text.dart';
 
 Widget cardVertical(
     {BuildContext context,

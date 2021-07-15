@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:vroom/src/colors/colors.dart';
-import 'package:vroom/src/features/presentation/widgets/header_text.dart';
+import 'package:vroom/src/features/presentation/widgets/Headers/header_text.dart';
 
 class ListTileCheck extends StatefulWidget {
   String texto;

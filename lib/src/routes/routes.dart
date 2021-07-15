@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:vroom/src/features/presentation/collections_page/View/collections_page.dart';
 import 'package:vroom/src/features/presentation/filter_page/View/filter_page.dart';
 
 //Pages
@@ -18,4 +19,5 @@ final routes = <String, WidgetBuilder>{
   'tabs' : (BuildContext context) => TabsPage(),
   'search' : (BuildContext context) => SearchPage(),
   'filter' : (BuildContext context) => FilterPage(),
+  'collections' : (BuildContext context) => CollectionsPage(),
 };

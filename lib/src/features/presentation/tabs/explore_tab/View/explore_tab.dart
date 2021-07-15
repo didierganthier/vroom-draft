@@ -2,7 +2,7 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_swiper/flutter_swiper.dart';
 import 'package:vroom/src/colors/colors.dart';
-import 'package:vroom/src/features/presentation/widgets/populares_card.dart';
+import 'package:vroom/src/features/presentation/widgets/Cards/populares_card.dart';
 
 class ExploreTab extends StatelessWidget {
   @override
@@ -36,7 +36,11 @@ class ExploreTab extends StatelessWidget {
                       _sliderCards(),
                       _headers(context, 'Popular this week', 'Show all'),
                       popularesCard(context, 'https://images.unsplash.com/photo-1458642849426-cfb724f15ef7?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NTR8fGZvb2R8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60'),
-                      _headers(context, 'Collections', "Show all"),
+                      GestureDetector(
+                          onTap: () {
+                            Navigator.pushNamed(context, 'collections');
+                          },
+                          child: _headers(context, 'Collections', "Show all")),
                       _slidersCollections(),
                     ],
                   ),

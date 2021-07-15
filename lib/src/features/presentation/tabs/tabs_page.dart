@@ -5,7 +5,7 @@ import 'package:vroom/src/features/presentation/tabs/explore_tab/View/explore_ta
 import 'package:vroom/src/features/presentation/tabs/favorites_tab/View/favorites_tab.dart';
 import 'package:vroom/src/features/presentation/tabs/my_order_tab/View/my_order_tab.dart';
 import 'package:vroom/src/features/presentation/tabs/profile_tab/View/profile_tab.dart';
-import 'package:vroom/src/features/presentation/widgets/alert_dialog.dart';
+import 'package:vroom/src/features/presentation/widgets/alerts/alert_dialog.dart';
 
 
 class TabsPage extends StatefulWidget {

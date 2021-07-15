@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:vroom/src/features/presentation/widgets/card_vertical.dart';
-import 'package:vroom/src/features/presentation/widgets/header_double.dart';
-import 'package:vroom/src/features/presentation/widgets/header_text.dart';
+import 'package:vroom/src/features/presentation/widgets/Cards/card_vertical.dart';
+import 'package:vroom/src/features/presentation/widgets/Headers/header_double.dart';
+import 'package:vroom/src/features/presentation/widgets/Headers/header_text.dart';
 import 'package:flutter_swiper/flutter_swiper.dart';
-import 'package:vroom/src/features/presentation/widgets/populares_card.dart';
+import 'package:vroom/src/features/presentation/widgets/Cards/populares_card.dart';
 import '../../../../colors/colors.dart';
 
 class SearchPage extends StatelessWidget {

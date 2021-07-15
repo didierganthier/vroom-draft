@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:vroom/src/features/presentation/widgets/alert_dialog.dart';
-import 'package:vroom/src/features/presentation/widgets/back_button.dart';
+import 'package:vroom/src/features/presentation/widgets/alerts/alert_dialog.dart';
+import 'package:vroom/src/features/presentation/widgets/backButtons/back_button.dart';
 
 
 class ForgotPassword extends StatelessWidget {
