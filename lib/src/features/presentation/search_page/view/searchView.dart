@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:vroom/src/features/presentation/widgets/Cards/card_vertical.dart';
+import 'package:vroom/src/features/presentation/widgets/Cards/vertical_card.dart';
 import 'package:vroom/src/features/presentation/widgets/Headers/header_double.dart';
 import 'package:vroom/src/features/presentation/widgets/Headers/header_text.dart';
 import 'package:flutter_swiper/flutter_swiper.dart';

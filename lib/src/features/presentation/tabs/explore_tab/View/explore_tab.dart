@@ -131,92 +131,97 @@ Widget _sliderCards() {
 }
 
 Widget _tarjeta(BuildContext context) {
-  return Container(
-    margin: EdgeInsets.all(8.0),
-    child: Column(
-      children: [
-        ClipRRect(
-          borderRadius: BorderRadius.circular(20),
-          child: CachedNetworkImage(
-            imageUrl:
-                'https://images.unsplash.com/photo-1512621776951-a57141f2eefd?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8Zm9vZHxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60',
-            fit: BoxFit.cover,
-            height: 250,
-            width: 200,
+  return GestureDetector(
+    onTap: () {
+      Navigator.pushNamed(context, 'place-detail');
+    },
+    child: Container(
+      margin: EdgeInsets.all(8.0),
+      child: Column(
+        children: [
+          ClipRRect(
+            borderRadius: BorderRadius.circular(20),
+            child: CachedNetworkImage(
+              imageUrl:
+                  'https://images.unsplash.com/photo-1512621776951-a57141f2eefd?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8Zm9vZHxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60',
+              fit: BoxFit.cover,
+              height: 250,
+              width: 200,
+            ),
           ),
-        ),
-        Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Container(
-              margin: EdgeInsets.only(top: 10.0),
-              child: Text(
-                'Pizza Garden',
-                style: TextStyle(
-                  color: Colors.black,
-                  fontWeight: FontWeight.bold,
-                  fontSize: 17.0,
-                ),
-              ),
-            ),
-            Container(
-              margin: EdgeInsets.only(top: 10.0),
-              child: Text(
-                '36 Chavannes, Petion-Ville',
-                style: TextStyle(
-                  color: Theme.of(context).primaryColor.withOpacity(0.5),
-                  fontWeight: FontWeight.w500,
-                  fontSize: 13.0,
-                ),
-              ),
-            ),
-            SizedBox(
-              height: 5,
-            ),
-            Row(
-              children: [
-                Icon(
-                  Icons.star,
-                  color: amarillo,
-                  size: 16,
-                ),
-                Text(
-                  "4.8",
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Container(
+                margin: EdgeInsets.only(top: 10.0),
+                child: Text(
+                  'Pizza Garden',
                   style: TextStyle(
                     color: Colors.black,
-                    fontWeight: FontWeight.w500,
-                    fontSize: 13.0,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 17.0,
                   ),
                 ),
-                Text(
-                  ' (233 ratings)',
+              ),
+              Container(
+                margin: EdgeInsets.only(top: 10.0),
+                child: Text(
+                  '36 Chavannes, Petion-Ville',
                   style: TextStyle(
-                    color: gris,
+                    color: Theme.of(context).primaryColor.withOpacity(0.5),
                     fontWeight: FontWeight.w500,
                     fontSize: 13.0,
                   ),
                 ),
-                Container(
-                  margin: EdgeInsets.symmetric(horizontal: 5.0),
-                  width: 80.0,
-                  height: 18.0,
-                  child: RaisedButton(
-                    elevation: 0.5,
-                    shape: StadiumBorder(),
-                    color: Theme.of(context).accentColor,
-                    textColor: Colors.white,
-                    onPressed: () {},
-                    child: Text(
-                      'Delivery',
-                      style: TextStyle(fontSize: 11.0),
+              ),
+              SizedBox(
+                height: 5,
+              ),
+              Row(
+                children: [
+                  Icon(
+                    Icons.star,
+                    color: amarillo,
+                    size: 16,
+                  ),
+                  Text(
+                    "4.8",
+                    style: TextStyle(
+                      color: Colors.black,
+                      fontWeight: FontWeight.w500,
+                      fontSize: 13.0,
                     ),
                   ),
-                ),
-              ],
-            ),
-          ],
-        ),
-      ],
+                  Text(
+                    ' (233 ratings)',
+                    style: TextStyle(
+                      color: gris,
+                      fontWeight: FontWeight.w500,
+                      fontSize: 13.0,
+                    ),
+                  ),
+                  Container(
+                    margin: EdgeInsets.symmetric(horizontal: 5.0),
+                    width: 80.0,
+                    height: 18.0,
+                    child: RaisedButton(
+                      elevation: 0.5,
+                      shape: StadiumBorder(),
+                      color: Theme.of(context).accentColor,
+                      textColor: Colors.white,
+                      onPressed: () {},
+                      child: Text(
+                        'Delivery',
+                        style: TextStyle(fontSize: 11.0),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ],
+          ),
+        ],
+      ),
     ),
   );
 }

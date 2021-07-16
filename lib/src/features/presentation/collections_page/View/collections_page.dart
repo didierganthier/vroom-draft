@@ -8,11 +8,14 @@ class CollectionsPage extends StatelessWidget {
     return Scaffold(
       body: CustomScrollView(
         slivers: [
-          SliverAppBar(
-            title: headerText(texto: 'Collections', fontsize: 17),
-            leading: Builder(builder: (BuildContext context){
-              return backButton(context, Colors.black);
-            }
+          Container(
+            child: SliverAppBar(
+              backgroundColor: Colors.white,
+              title: headerText(texto: 'Collections', fontsize: 17),
+              leading: Builder(builder: (BuildContext context){
+                return backButton(context, Colors.black);
+              }
+              ),
             ),
           ),
           SliverPadding(
@@ -47,7 +50,7 @@ class CollectionsPage extends StatelessWidget {
 Widget _card(BuildContext context) {
   return GestureDetector(
       onTap: () {
-
+        Navigator.pushNamed(context, 'collections-detail');
       },
       child: Stack(
         children: [
@@ -79,7 +82,6 @@ Widget _card(BuildContext context) {
               ],
             ),
           )
-
         ],
       )
   );
