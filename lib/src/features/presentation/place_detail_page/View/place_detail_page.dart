@@ -10,7 +10,7 @@ class PlaceDetailPage extends StatelessWidget {
       body: CustomScrollView(
         slivers: [
           SliverAppBar(
-            expandedHeight: 395,
+            expandedHeight: 410,
             flexibleSpace: FlexibleSpaceBar(
               background: Stack(
                 children: [
