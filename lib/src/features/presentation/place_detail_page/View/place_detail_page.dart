@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:vroom/src/colors/colors.dart';
+import 'package:vroom/src/features/presentation/widgets/Headers/header_double.dart';
 import 'package:vroom/src/features/presentation/widgets/Headers/header_text.dart';
 import 'package:vroom/src/features/presentation/widgets/backButtons/back_button.dart';
 
@@ -55,6 +56,14 @@ class PlaceDetailPage extends StatelessWidget {
                 onPressed: () {},
               )
             ],
+          ),
+          SliverList(
+              delegate: SliverChildListDelegate(
+                [
+                 _headers(texto: 'Populars'),
+                  _sliderCards()
+                ]
+              )
           )
         ],
       ),
@@ -218,5 +227,51 @@ Widget _offerBanner() {
         )
       ],
     ),
+  );
+}
+
+Widget _headers({ texto: String }) {
+  return Container(
+    margin: EdgeInsets.symmetric(vertical: 20.0),
+    padding: EdgeInsets.symmetric(horizontal: 20.0),
+      child: headerDoubleText(textHeader: texto, textAction: ''),
+  );
+}
+
+Widget _sliderCards() {
+   return Container(
+    height: 210,
+     padding: EdgeInsets.only(left: 20.0),
+    child: ListView.builder(
+        scrollDirection: Axis.horizontal,
+        itemBuilder: (BuildContext context, int index) {
+          return _cards();
+        }
+    ),
+  );
+}
+
+Widget _cards() {
+  return Container(
+    margin: EdgeInsets.all(8.0),
+    child: Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        ClipRRect(
+          borderRadius: BorderRadius.circular(8.0),
+          child: Image(
+            width: 200.0,
+            height: 100.0,
+            fit: BoxFit.cover,
+            image: AssetImage('assets/salads.jpg'),
+          ),
+        ),
+        Container(
+            margin: EdgeInsets.only(top: 10),
+            child: headerText(texto: 'Salad plate', fontWeight: FontWeight.bold, fontsize: 15.0)),
+        Container(
+            alignment: Alignment.centerLeft,
+            child: headerText(texto: '9.50 \$', fontWeight: FontWeight.w500, fontsize: 14.0, color: gris))
+      ],),
   );
 }
