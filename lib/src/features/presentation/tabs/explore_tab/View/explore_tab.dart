@@ -262,7 +262,7 @@ Widget _headers(BuildContext context, String textHeader, String textAction) {
 
 Widget _slidersCollections(){
   return Container(
-    height: 350,
+    height: 250,
     child: Swiper(
       itemCount: 4,
       layout: SwiperLayout.DEFAULT,
