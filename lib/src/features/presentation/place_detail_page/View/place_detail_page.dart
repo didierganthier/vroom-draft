@@ -13,7 +13,7 @@ class PlaceDetailPage extends StatelessWidget {
           onPressed: () {},
           backgroundColor: orange,
           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
-          label: headerText(texto: 'Anadir a la Cesta 95.40\$', color: Colors.white, fontWeight: FontWeight.w600, fontsize: 17.0)
+          label: headerText(texto: 'Add to cart 95.40\$', color: Colors.white, fontWeight: FontWeight.w600, fontsize: 17.0)
       ),
       body: CustomScrollView(
         slivers: [
@@ -73,6 +73,8 @@ class PlaceDetailPage extends StatelessWidget {
                   _menuList(context),
                   _headers(texto: 'Reviews'),
                   _reviews(),
+                  _headers(texto: 'Your rating'),
+                  _yourRating(),
                   SizedBox(height: 150.0,)
                 ]
               )
@@ -357,8 +359,9 @@ Widget _reviews() {
 }
 
 Widget _cardReviews() {
+  var lorem = "blablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablabla";
   return Container(
-    margin: EdgeInsets.only(top: 10),
+    margin: EdgeInsets.only(top: 10, right: 20),
     padding: EdgeInsets.only(top: 10),
     width: 350,
     child: Column(
@@ -373,9 +376,218 @@ Widget _cardReviews() {
                 fit: BoxFit.cover,
                 image: AssetImage('assets/dog.jpg'),
               ),
+            ),
+            Container(
+              margin: EdgeInsets.only(left: 10),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  headerText(
+                      texto: 'Woodens Fanfan',
+                    fontWeight: FontWeight.bold,
+                    fontsize: 14
+                  ),
+                  headerText(
+                      texto: '50 Reviews',
+                      fontWeight: FontWeight.w500,
+                      fontsize: 12,
+                      color: gris
+                  ),
+                ],
+              ),
+            ),
+            Spacer(),
+            Container(
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(8),
+                child: Container(
+                  height: 30,
+                  width: 60,
+                  color: orange,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      headerText(
+                        texto: '4',
+                        color: Colors.white,
+                        fontWeight: FontWeight.w400,
+                        fontsize: 12
+                      ),
+                      Icon(Icons.star, color: Colors.white, size: 14,)
+                    ],
+                  ),
+                ),
+              ),
             )
           ],
+        ),
+        Container(
+          margin: EdgeInsets.only(top: 10),
+          child: headerText(
+            texto: lorem,
+            color: gris,
+            fontsize: 12,
+            fontWeight: FontWeight.w400,
+            textAlign: TextAlign.left
+          ),
+        ),
+        Container(
+          margin: EdgeInsets.only(right: 10),
+          child: headerText(
+              texto: 'See full review',
+              color: orange,
+              fontsize: 15,
+              fontWeight: FontWeight.w500,
+          ),
         )
+      ],
+    ),
+  );
+}
+
+Widget  _yourRating() {
+  var lorem = "blablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablabla";
+
+  return Container(
+    margin: EdgeInsets.only(top: 10),
+    padding: EdgeInsets.only(left: 10, right: 10),
+    child: Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children: [
+            Container(
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(8),
+                child: Container(
+                  height: 30,
+                  width: 60,
+                  color: orangeWithHalfOpacity,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      headerText(
+                          texto: '1',
+                          color: Colors.white,
+                          fontWeight: FontWeight.w400,
+                          fontsize: 12
+                      ),
+                      Icon(Icons.star, color: Colors.white, size: 14,)
+                    ],
+                  ),
+                ),
+              ),
+            ),
+            Container(
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(8),
+                child: Container(
+                  height: 30,
+                  width: 60,
+                  color: orangeWithHalfOpacity,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      headerText(
+                          texto: '2',
+                          color: Colors.white,
+                          fontWeight: FontWeight.w400,
+                          fontsize: 12
+                      ),
+                      Icon(Icons.star, color: Colors.white, size: 14,)
+                    ],
+                  ),
+                ),
+              ),
+            ),
+            Container(
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(8),
+                child: Container(
+                  height: 30,
+                  width: 60,
+                  color: orangeWithHalfOpacity,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      headerText(
+                          texto: '3',
+                          color: Colors.white,
+                          fontWeight: FontWeight.w400,
+                          fontsize: 12
+                      ),
+                      Icon(Icons.star, color: Colors.white, size: 14,)
+                    ],
+                  ),
+                ),
+              ),
+            ),
+            Container(
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(8),
+                child: Container(
+                  height: 30,
+                  width: 60,
+                  color: orange,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      headerText(
+                          texto: '4',
+                          color: Colors.white,
+                          fontWeight: FontWeight.w400,
+                          fontsize: 12
+                      ),
+                      Icon(Icons.star, color: Colors.white, size: 14,)
+                    ],
+                  ),
+                ),
+              ),
+            ),
+            Container(
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(8),
+                child: Container(
+                  height: 30,
+                  width: 60,
+                  color: orangeWithHalfOpacity,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      headerText(
+                          texto: '5',
+                          color: Colors.white,
+                          fontWeight: FontWeight.w400,
+                          fontsize: 12
+                      ),
+                      Icon(Icons.star, color: Colors.white, size: 14,)
+                    ],
+                  ),
+                ),
+              ),
+            ),
+          ],
+        ),
+        Container(
+          margin: EdgeInsets.only(top: 10, left: 20),
+          child: headerText(
+            texto: lorem,
+            color: gris,
+            fontsize: 12,
+            fontWeight: FontWeight.w400,
+            textAlign: TextAlign.left
+          ),
+        ),
+        Container(
+          margin: EdgeInsets.only(top: 10, left: 20),
+          child: headerText(
+              texto: '+ Edit your review',
+              fontsize: 15,
+              fontWeight: FontWeight.w500,
+              color: orange
+          ),
+        ),
       ],
     ),
   );
