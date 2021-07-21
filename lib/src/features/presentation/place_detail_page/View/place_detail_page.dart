@@ -8,6 +8,13 @@ class PlaceDetailPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
+      floatingActionButton: FloatingActionButton.extended(
+          onPressed: () {},
+          backgroundColor: orange,
+          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+          label: headerText(texto: 'Anadir a la Cesta 95.40\$', color: Colors.white, fontWeight: FontWeight.w600, fontsize: 17.0)
+      ),
       body: CustomScrollView(
         slivers: [
           SliverAppBar(
@@ -61,7 +68,12 @@ class PlaceDetailPage extends StatelessWidget {
               delegate: SliverChildListDelegate(
                 [
                  _headers(texto: 'Populars'),
-                  _sliderCards()
+                  _sliderCards(),
+                  _headers(texto: 'Full Menu'),
+                  _menuList(context),
+                  _headers(texto: 'Reviews'),
+                  _reviews(),
+                  SizedBox(height: 150.0,)
                 ]
               )
           )
@@ -271,7 +283,100 @@ Widget _cards() {
             child: headerText(texto: 'Salad plate', fontWeight: FontWeight.bold, fontsize: 15.0)),
         Container(
             alignment: Alignment.centerLeft,
-            child: headerText(texto: '9.50 \$', fontWeight: FontWeight.w500, fontsize: 14.0, color: gris))
-      ],),
+            child: headerText(texto: '9.50 \$', fontWeight: FontWeight.w500, fontsize: 14.0, color: gris)),
+        Row(
+          children: [
+            Container(
+              margin: EdgeInsets.only(top: 10),
+              child: headerText(
+                texto: "Selecciona",
+                fontWeight: FontWeight.w500,
+                fontsize: 15.0,
+                color: orange
+              ),
+            ),
+            Container(
+              margin: EdgeInsets.only(top: 10, left: 90),
+              child: Image(
+                width: 20.0,
+                color: orange,
+                height: 20.0,
+                fit: BoxFit.cover,
+                image: AssetImage('assets/plus_order.png'),
+              ),
+            )
+          ],
+        )
+      ],
+    ),
+  );
+}
+
+Widget _menuList(BuildContext context) {
+  return Container(
+    padding: EdgeInsets.only(left: 10.0),
+    child: Column(
+      children: [
+        _menuItem(context, 'Salads', '2'),
+        _menuItem(context, 'Chicken', '5'),
+        _menuItem(context, 'Soups', '6'),
+        _menuItem(context, 'Vegetables', '7')
+      ],
+    ),
+  );
+}
+
+Widget _menuItem(BuildContext context, String texto, String itemCount) {
+  return Container(
+    decoration: BoxDecoration(
+      border: Border(bottom: BorderSide(color: gris))
+    ),
+    child: Column(
+      children: [
+        ListTile(
+          title: headerText(texto: texto, fontWeight: FontWeight.w300,fontsize: 17.0),
+          trailing:  headerText(texto: itemCount, fontWeight: FontWeight.w300,fontsize: 17.0),
+        ),
+        _sliderCards()
+      ],
+    ),
+  );
+}
+
+Widget _reviews() {
+  return Container(
+    height: 135,
+    padding: EdgeInsets.only(left: 10),
+    child: ListView.builder(
+        scrollDirection: Axis.horizontal,
+        itemBuilder: (BuildContext context, int index) {
+          return _cardReviews();
+        }
+    ),
+  );
+}
+
+Widget _cardReviews() {
+  return Container(
+    margin: EdgeInsets.only(top: 10),
+    padding: EdgeInsets.only(top: 10),
+    width: 350,
+    child: Column(
+      children: [
+        Row(
+          children: [
+            ClipRRect(
+              borderRadius: BorderRadius.circular(8.0),
+              child: Image(
+                width: 49.0,
+                height: 43.0,
+                fit: BoxFit.cover,
+                image: AssetImage('assets/dog.jpg'),
+              ),
+            )
+          ],
+        )
+      ],
+    ),
   );
 }
