@@ -21,7 +21,7 @@ class _MyOrdersTabState extends State<MyOrdersTab> {
             elevation: 0.5,
             leading: Text(''),
             backgroundColor: white,
-            title: headerText(texto: 'My Order', color: primaryColor, fontsize: 17, fontWeight: FontWeight.w600,),
+            title: headerText(texto: '                      My Order', color: primaryColor, fontsize: 17, fontWeight: FontWeight.w600,),
           ),
           SliverList(
               delegate: SliverChildListDelegate(
