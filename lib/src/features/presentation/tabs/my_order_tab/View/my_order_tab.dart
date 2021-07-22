@@ -31,6 +31,8 @@ class _MyOrdersTabState extends State<MyOrdersTab> {
                     child: Column(
                       children: [
                         _orders(context),
+                        SizedBox(height: 40,),
+                        _checkoutResume(context)
                       ],
                     ),
                   )
@@ -151,6 +153,72 @@ Widget _moreContent(context) {
   return Container(
     child: ListTile(
       title: headerText(texto: 'Add more items', color: rosa, fontWeight: FontWeight.w300, fontsize: 17.0),
+    ),
+  );
+}
+
+Widget _checkoutResume(context) {
+  return Container(
+    padding: EdgeInsets.all(10),
+    margin: EdgeInsets.symmetric(vertical: 10),
+    width: double.infinity,
+    decoration: BoxDecoration(
+      borderRadius: BorderRadius.circular(10.0),
+      color: white,
+      boxShadow: [
+        BoxShadow(
+          color: Color.fromRGBO(210, 211, 215, 1.0),
+          spreadRadius: 1.0,
+          blurRadius: 4.0
+        )
+      ]
+    ),
+    child: Column(
+      children: [
+        _itemsCheckOutResume(title: 'Subtotal', value: '93.40\$', context: context),
+        _itemsCheckOutResume(title: 'Tax & Fee', value: '3.00\$', context: context),
+        _itemsCheckOutResume(title: 'Delivery', value: 'Free', context: context),
+        _buttonCheckOut(context)
+      ],
+    ),
+  );
+}
+
+Widget _itemsCheckOutResume({ title: String, value: String, context: BuildContext}) {
+  return Container(
+    decoration: BoxDecoration(
+      border: Border(bottom: BorderSide(color: Theme.of(context).dividerColor))
+    ),
+    child: ListTile(
+      title: headerText(texto: title, fontWeight: FontWeight.w400, fontsize: 15.0),
+      trailing: headerText(texto: value, fontWeight: FontWeight.w500, fontsize: 15.0),
+    ),
+  );
+}
+
+Widget  _buttonCheckOut(context) {
+  return Container(
+    width: double.infinity,
+    height: 45.0,
+    margin: EdgeInsets.only(top: 10.0),
+    child: RaisedButton(
+      elevation: 0.5,
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
+      color: orange,
+      onPressed: () {},
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Container(),
+          Container(
+            margin: EdgeInsets.only(left: 50),
+            child: headerText(texto: 'Continue', fontsize: 17, fontWeight: FontWeight.bold, color: white),
+          ),
+          Container(
+            child: headerText(texto: '93.40\$', fontsize: 15, fontWeight: FontWeight.bold, color: white),
+          )
+        ],
+      ),
     ),
   );
 }
