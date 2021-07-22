@@ -30,7 +30,7 @@ class _MyOrdersTabState extends State<MyOrdersTab> {
                       padding: EdgeInsets.symmetric(horizontal: 10.0),
                     child: Column(
                       children: [
-                        _orders(context)
+                        _orders(context),
                       ],
                     ),
                   )
@@ -53,7 +53,7 @@ Widget  _orders(BuildContext context) {
 
 Widget _cardOrders(BuildContext context) {
   return Container(
-    padding: EdgeInsets.all(10.0),
+    padding: EdgeInsets.symmetric(horizontal: 10.0),
     margin: EdgeInsets.symmetric(vertical: 10.0),
     width: double.infinity,
     decoration: BoxDecoration(
@@ -73,7 +73,16 @@ Widget _cardOrders(BuildContext context) {
           children: [
             _cardOrderTopContent()
           ],
-        )
+        ),
+        Column(
+          children: [
+            _items(context),
+            _items(context),
+            _items(context),
+            _items(context),
+          ],
+        ),
+        _moreContent(context)
       ],
     ),
   );
@@ -116,6 +125,32 @@ Widget _cardOrderTopContent() {
           ),
         )
       ],
+    ),
+  );
+}
+
+Widget _items(context) {
+  return Container(
+    decoration: BoxDecoration(
+      border: Border(bottom: BorderSide(color: Theme.of(context).dividerColor))
+    ),
+    child: ListTile(
+      title: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          headerText(texto: 'Special Gajananad Bhel', color: orange, fontWeight: FontWeight.w300,fontsize: 15.0),
+          headerText(texto: 'Mixed vegetables, Chicken Egg', color: gris, fontWeight: FontWeight.w300,fontsize: 12.0)
+        ],
+      ),
+      trailing: headerText(texto: '17,20\$', color: gris, fontWeight: FontWeight.w300, fontsize: 15.0),
+    ),
+  );
+}
+
+Widget _moreContent(context) {
+  return Container(
+    child: ListTile(
+      title: headerText(texto: 'Add more items', color: rosa, fontWeight: FontWeight.w300, fontsize: 17.0),
     ),
   );
 }
