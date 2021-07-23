@@ -30,7 +30,7 @@ class _FavoritesTabState extends State<FavoritesTab> {
                         favouritesCard(
                           image: AssetImage('assets/favorite1.jpg'),
                           title: "Andy & Cindy's Diner",
-                          subtitle: 'Petion-ville',
+                          subtitle: 'Delmas',
                           review: "4.8",
                           ratings: "(233 ratings)",
                           buttonText: 'Delivery',
@@ -39,7 +39,7 @@ class _FavoritesTabState extends State<FavoritesTab> {
                         ),
                         favouritesCard(
                           image: AssetImage('assets/favorite1.jpg'),
-                          title: "Andy & Cindy's Diner",
+                          title: "Pizza Garden             ",
                           subtitle: 'Petion-ville',
                           review: "4.8",
                           ratings: "(233 ratings)",
