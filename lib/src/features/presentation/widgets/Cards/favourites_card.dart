@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:vroom/src/colors/colors.dart';
 import 'package:vroom/src/features/presentation/widgets/Headers/header_text.dart';
+import 'package:vroom/src/utils/style/box_decoration_shadows.dart';
 
 Widget favouritesCard({
   BuildContext context,
@@ -26,17 +27,7 @@ bool isFavourite = true
     ),
     padding: EdgeInsets.only(left: 5, top: 20, bottom: 20),
     width: double.infinity,
-    decoration: BoxDecoration(
-      borderRadius: BorderRadius.circular(20.0),
-      color: Colors.white,
-      boxShadow: [
-        BoxShadow(
-          color: Color.fromRGBO(210, 211, 215, 1.0),
-          offset: Offset(0,5),
-          blurRadius: 10.0
-        )
-      ]
-    ),
+    decoration: createBoxDecorationWithShadows(),
     child: Row(
       children: [
         ClipRRect(

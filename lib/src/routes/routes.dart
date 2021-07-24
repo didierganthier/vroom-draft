@@ -7,6 +7,7 @@ import 'package:vroom/src/features/presentation/filter_page/View/filter_page.dar
 import 'package:vroom/src/features/presentation/forgot_password/View/forgot_password.dart';
 import 'package:vroom/src/features/presentation/login_page/VIew/login_page.dart';
 import 'package:vroom/src/features/presentation/place_detail_page/View/place_detail_page.dart';
+import 'package:vroom/src/features/presentation/profile_detail_page/View/profile_detail_page.dart';
 import 'package:vroom/src/features/presentation/search_page/view/searchView.dart';
 import 'package:vroom/src/features/presentation/sign_up_page/VIew/sign_up_page.dart';
 import 'package:vroom/src/features/presentation/tabs/tabs_page.dart';
@@ -23,5 +24,6 @@ final routes = <String, WidgetBuilder>{
   'filter' : (BuildContext context) => FilterPage(),
   'collections' : (BuildContext context) => CollectionsPage(),
   'collections-detail' : (BuildContext context) => CollectionDetailPage(),
-  'place-detail' : (BuildContext context) => PlaceDetailPage()
+  'place-detail' : (BuildContext context) => PlaceDetailPage(),
+  'profile-detail' : (BuildContext context) => ProfileDetailPage()
 };

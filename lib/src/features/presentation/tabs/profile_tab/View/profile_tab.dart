@@ -20,7 +20,9 @@ class _ProfileTabState extends State<ProfileTab> {
     padding: EdgeInsets.symmetric(horizontal: 1),
     child: Column(
     children: [
-      _header(), _contentProfile()
+      GestureDetector(
+          onTap: () => Navigator.pushNamed(context, 'profile-detail'),
+          child: _header()), _contentProfile()
     ],
     ),
     )
